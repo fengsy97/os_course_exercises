@@ -52,6 +52,7 @@
     unsigned gd_off_31_16 : 16;        // high bits of offset in segment
  };
 ```
+    ：后的数字表示这个变量的二进制位数
 
 - 对于如下的代码段，
 
@@ -75,6 +76,8 @@ intr=8;
 SETGATE(intr, 1,2,3,0);
 ```
 请问执行上述指令后， intr的值是多少？
+0x20003
+实际上就是高16位等于gd_ss，即2  低16位等于gd_off_15_0，即3
 
 ### 课堂实践练习
 
